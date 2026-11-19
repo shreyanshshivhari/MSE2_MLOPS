@@ -1,0 +1,29 @@
+INVOICE
+───────────────────────────────────────
+Invoice Number : INV-212399
+Invoice Date   : 28/07/2024
+Due Date       : 28/08/2024
+
+Bill To:
+  BlueSky Consulting
+  123 Business Park, Suite 68
+  New Delhi – 110001
+
+Bill From:
+  MyCompany Pvt. Ltd.
+  456 Corporate Hub, Floor 7
+  Mumbai – 400001
+
+───────────────────────────────────────
+ITEM DESCRIPTION        QTY    UNIT PRICE    AMOUNT
+Cloud Hosting (monthly)  1      1,983.00      1,983.00
+───────────────────────────────────────
+Sub Total                                    1,983.00
+GST (18%)                                    356.94
+TOTAL DUE                                    2,339.94
+───────────────────────────────────────
+Payment Terms : Net 30 days
+Bank Details  : HDFC Bank, A/C 00123456789, IFSC HDFC0001234
+
+Thank you for your business!
+For queries: billing@mycompany.com | +91-98765-43210

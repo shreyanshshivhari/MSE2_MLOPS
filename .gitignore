@@ -1,0 +1,56 @@
+# Git ignore file for Smart Document Classifier project
+# Keeps the repository clean by excluding auto-generated and sensitive files.
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# MLflow experiment logs (can be very large; regenerate by running train.py)
+mlruns/
+mlartifacts/
+
+# DVC cache (DVC manages this separately)
+.dvc/cache/
+.dvc/tmp/
+
+# Trained model (tracked by DVC / built in CI, not committed to Git)
+# Comment this out if you WANT to commit the model directly to Git
+# models/
+
+# Data directories (tracked by DVC)
+data/raw/
+data/external/
+data/feedback/
+
+# Temporary upload files
+/tmp/
+
+# pytest cache
+.pytest_cache/
+*.pytest_cache/
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml

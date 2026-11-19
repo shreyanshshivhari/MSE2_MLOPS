@@ -1,0 +1,51 @@
+# .dockerignore
+# =============
+# PURPOSE: Tell Docker which files NOT to send to the build context.
+# A smaller build context = faster docker build and docker push.
+# It also prevents secrets and large data files from leaking into the image.
+
+# Python virtual environment – never needed inside the container
+venv/
+.venv/
+env/
+
+# Raw training data – the model is already trained and saved to models/
+# We exclude data/ to keep the image small (data can be 100s of MB)
+data/
+
+# MLflow experiment logs – not needed for serving
+mlruns/
+
+# DVC metadata – only needed during data versioning, not at runtime
+.dvc/
+*.dvc
+
+# Git metadata
+.git/
+.gitignore
+
+# Python bytecode – regenerated automatically by Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Editor / IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS metadata
+.DS_Store
+
+# Test files – not needed in the production image
+tests/
+pytest.ini
+.pytest_cache/
+
+# CI/CD config – only needed by GitHub Actions, not the container
+.github/
+
+# Jupyter notebooks (if any)
+*.ipynb
+.ipynb_checkpoints/
