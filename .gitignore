@@ -14,9 +14,10 @@ venv/
 env/
 ENV/
 
-# MLflow experiment logs (can be very large; regenerate by running train.py)
+# MLflow experiment logs and database
 mlruns/
 mlartifacts/
+mlflow.db
 
 # DVC cache (DVC manages this separately)
 .dvc/cache/

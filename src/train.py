@@ -141,10 +141,21 @@ def train() -> None:
     # We use SQLite as the tracking backend (required by MLflow 3.x;
     # the old file-store backend is deprecated).
     db_path = ROOT / "mlflow.db"
+    artifacts_dir = ROOT / "mlruns"
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
     mlflow.set_tracking_uri(f"sqlite:///{db_path}")
-    mlflow.set_experiment("smart-document-classifier")
 
-    with mlflow.start_run():
+    # Set or create experiment with local relative artifact location
+    exp = mlflow.get_experiment_by_name("smart-document-classifier")
+    if exp is None:
+        exp_id = mlflow.create_experiment(
+            "smart-document-classifier",
+            artifact_location=artifacts_dir.as_uri(),
+        )
+    else:
+        exp_id = exp.experiment_id
+
+    with mlflow.start_run(experiment_id=exp_id):
         # Log hyperparameters
         mlflow.log_param("max_features", MAX_FEATURES)
         mlflow.log_param("kernel", SVC_KERNEL)
